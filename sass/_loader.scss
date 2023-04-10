@@ -1,0 +1,37 @@
+.loader-container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    z-index: 1;
+}
+
+.loader-bar{
+    width: 60%;
+    max-width: 400px;
+    height: 40px;
+    background-color: rgb(226, 226, 226);
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 200;
+}
+
+.loader{
+    height: 100%;
+    width: 0%;
+    background-color: rgb(134, 134, 241);
+    animation: move-bar 2.5s cubic-bezier(.06, .78, .98, .14);
+    transition: width .2s ease-out;
+}
+
+// @keyframes move-bar{
+//     from{
+//         width: 0%;
+//     }
+//     to{
+//         width: 100%;
+//     }
+// }

@@ -1,0 +1,110 @@
+#services {
+    overflow: hidden;
+  
+
+    .boxes {
+
+        >* {
+            padding: 1.5rem 0;
+
+        }
+
+        .three-column-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 4rem;
+            overflow: hidden;
+
+            .image-container {
+            //    height: auto;
+               width: 300px;
+               height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-inline: auto;
+            }
+
+            >.box {
+                // display: flex;
+                width: 100%;
+                max-width: 550px;
+               justify-content: center;
+               align-items: center;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                opacity: 0;
+                transition: opacity 200ms ease-in ;
+                p{
+                    text-align: center;
+                }
+                &.appear{
+                    opacity: 1;
+                    }
+                .mini-header {
+                    @extend .text-center;
+                }
+
+                .auxbtn {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    width: fit-content;
+                    padding: .75rem 0;
+                    // height: 36px;
+                    border: 0;
+                    font-size: 1rem;
+                    background-color: transparent;
+                    font-weight: $fw-heavy;
+                    border-bottom: 2px solid $light-text;
+                }
+            }
+
+        }
+
+        .two-column-layout {
+            .image-container {
+                height: 60vh;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            >div {
+                flex: 1;
+            }
+
+            .sa {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                justify-content: flex-end;
+
+            }
+
+            .containerii {
+                .button {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+
+}
+
+.from-left,
+.from-right{
+    opacity: 0;
+    transition: opacity 200ms ease-in, 
+    ;
+    &.appear{
+        // transform: translate(0);
+        opacity: 1;
+    }
+}
+

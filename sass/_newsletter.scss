@@ -1,0 +1,56 @@
+
+#newsletter {
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    form {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        flex-direction: column;
+        justify-content: center;
+
+        [type='text'] {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 0;
+            font-size: .90rem;
+            font-weight: $fw-light;
+            transition: box-shadow .3s ease-in-out;
+
+            &:focus,
+            &:focus-visible {
+                outline: 0;
+                box-shadow: 0px 0px 0px 2.5px #4c81c5;
+            }
+        }
+
+        [type='submit'] {
+            width: 100%;
+            margin: 0;
+            max-width: unset;
+            border-radius: 10px;
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+     
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        width: 50%;
+        min-width: 300px;
+        right: 1rem;
+        bottom: 45%;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        background-color: rgba(255, 255, 255, 0.158);
+    }
+    
+}

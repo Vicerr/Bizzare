@@ -1,0 +1,156 @@
+.header-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+
+    .sub-header {
+        color: $white;
+    }
+
+}
+// @media screen and (max-width: 480px){
+//    header{
+//         height: 100vh;
+//     }
+// }
+
+.header-writeup {
+    width: 100%;
+
+    >div {
+        text-align: center;
+        padding: 1rem 0;
+        width: 90%;
+        margin-inline: auto;
+        height: 100%;
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+    }
+}
+
+@for $i from 1 through 4 {
+
+    .header-slide:nth-child(#{$i}) {
+        transform: translateX(-150%);
+        opacity: 0;
+        transition: opacity 1s ease-in #{calc($i * .5s)}, transform 1s ease-in #{calc($i * .3s)};
+    }
+
+    .header-slide.slide{
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+    }
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+
+    .button {
+        width: 180px;
+        margin: 0;
+    }
+}
+
+.icon-group {
+    display: flex;
+    justify-content: center;
+
+    gap: 1.5rem;
+
+    i {
+        padding: .75rem;
+        aspect-ratio: 1;
+        color: white;
+        border-radius: 50%;
+        font-size: 1.5rem;
+
+    }
+
+    .fa-twitter {
+        background-color: #1DA1F2;
+    }
+
+    .fa-instagram {
+        background-color: #E4405F;
+    }
+
+    .fa-google {
+        background-color: #4285F4;
+    }
+}
+
+// .header-image {
+//     display: none;
+// }
+
+.button.explore {
+    background-color: inherit;
+    border: 1px solid $light-text;
+    color: white;
+}
+.icon-group {
+    display: none;
+}
+.button-group{
+    display: none;
+}
+.sub-header{
+    font-size: 30px;
+}
+
+.button-group.smaller-screen{
+    display: block;
+
+    .button{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-writeup {
+        width: 60%;
+        >div {
+            text-align: left;
+            width: 80%;
+        }
+        .sub-header{
+            font-size: 3rem;
+            font-weight: 600;
+        }
+    }
+
+    .header-image {
+        width: 40%;
+        height: 100vh;
+        max-height: 800px;
+        display: block;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .icon-group {
+        justify-content: flex-start;
+        display: flex;
+    }
+    .button-group{
+        display: flex;
+    }
+    
+.button-group.smaller-screen{
+    display: none;
+}
+
+}
+

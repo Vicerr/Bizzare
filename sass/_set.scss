@@ -1,0 +1,126 @@
+:root{
+    font-family: 'Inter';
+    color:hsla(0, 0%, 0%, 1);
+    scroll-behavior: smooth;
+    font-size: 15px;
+}
+
+@media screen and (min-width: 500px) {
+    :root{
+        font-size: 16px;
+    }
+}
+
+// variables
+$primary-clr: hsla(0,0%,0%,1);
+$bg-dark: hsla(240, 6%, 13%, 1);
+$bg-light: hsla(0, 0%, 97%, 1);
+$light-text: hsla(0, 0%, 47%, 1);
+$box-shadow:  0px 0px 12px 0px hsla(0, 0%, 0%, 0.12);
+$dark-blue: hsla(209, 73%, 15%, 1);
+$green: hsla(149, 70%, 65%, 1);
+$yellow:  hsla(48, 100%, 47%, 1);
+$white: hsla(0, 0%, 100%, 1);
+$fw-heavy: 700;
+$fw-light: 400;
+$shadow: hsla(0,0%,73.3%,.5);
+$twitter-clr:hsl(203, 89%, 53%);
+$instagram-clr: hsl(349, 75%, 57%);
+$google-clr:hsl(217, 89%, 61%);
+
+//reset
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    overflow-x: hidden;
+    line-height: 1.5;
+    position: relative;
+    background-color: rgba(248, 248, 248, 0.493);
+}
+h1{
+    font-size: 2rem;
+}
+/*
+*UTILITY CLASSES
+*/
+
+//background colors for buttons
+@each $bg-name, $bg-clr in ('green',$green),
+('dark-blue', $dark-blue),
+('yellow', $yellow), 
+('white-bg', $white),
+('light-bg', $bg-light),
+('dark-bg', $bg-dark){
+    .#{$bg-name}{
+        @if ($bg-name == 'dark-blue') {
+            color: white;
+        }
+        background-color: $bg-clr;
+    }
+}
+
+.display-none-for-loader{
+    display: none !important;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+
+}
+
+.display-none-for-main{
+    display: none;
+    opacity: 0;
+    transition: opacity 1.3s ease-in;
+
+}
+
+/* Button */
+.button{
+border: none;
+padding: .75rem 1rem;
+font-weight: $fw-heavy;
+font-size: .90rem;
+border-radius: 20px;
+width: 100%;
+max-width: 250px;
+margin-inline: auto;
+&:hover{
+    cursor: pointer;
+}
+}
+
+.container{
+    width: 90%;
+    margin-inline: auto;
+}
+.header{
+    font-weight: $fw-heavy;
+    font-size: 3rem;
+
+}
+.white{
+    color: white;
+}
+.sub-header{
+    font-weight: $fw-light;
+    font-size: 2.25rem;
+}
+.mini-header{
+    font-weight: $fw-light;
+    font-size: 1.5rem;
+}
+.text-center{
+    text-align: center;
+}
+.light-text{
+    color: $light-text;
+}

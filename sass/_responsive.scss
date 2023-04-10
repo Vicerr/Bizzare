@@ -1,0 +1,136 @@
+
+@media screen and (min-width:720px) {
+
+   .two-column-layout, #about .two-column-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    >* {
+        flex: 1;
+        width: 100%;
+    }
+}
+}
+
+@media screen and (min-width:720px) {
+    #services {
+        // >* {
+        //     margin: 2rem 0;
+        // }
+
+        .boxes {
+
+
+            .three-column-layout {
+                // display: grid;
+                // grid-template-columns: repeat(3, 1fr);
+                // gap: 4rem;
+                display: flex;
+                gap: 3rem;
+                align-items: flex-start;
+                justify-content: center;
+
+                // .image-container{
+                //     height: 517.717px;
+                    
+                // }
+                >.box {
+                    // max-width: 550px;
+                    // align-items: flex-start;
+                    p{
+                        text-align: left;
+                    }
+                    // gap: .5rem;
+                    // .mini-header {
+                    //     text-align: left;
+
+                    // }
+
+                  
+                }
+            @for $i from 1 through 3{
+
+                .box:nth-child( #{$i} ){
+               
+                    transition: opacity 500ms ease-in #{calc(($i * 0.1) + 0.2)}s ,transform 500ms ease-in #{calc(($i * 0.1) + 0.6)}s;
+
+                  
+                }
+            }
+            }
+
+            .two-column-layout {
+                display: flex;
+                flex-direction: row;
+                gap: 4rem;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .image-container {
+                    height: 80vh;
+                    max-height: 570px;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+
+                .containerii {
+                    .button {
+                        margin-inline: 0;
+                        width: 43%;
+                    }
+                }
+
+                &:nth-child(3) {
+                    .image-container {
+                        order: 1;
+
+                    }
+                }
+            }
+        }
+
+        .sa {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: flex-end;
+
+            //   .image-container {
+            //         order: 1;
+            //     }
+
+            //    :not(.image-container) {
+            //         order: 2;
+            //     }
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 720px) {
+    #newsletter {
+        .button {
+            margin: 0;
+        }
+
+        form {
+            flex-direction: row;
+
+
+            [type='text'] {
+                width: 40%;
+                padding: .5rem 1rem;
+
+            }
+
+            [type='submit'] {
+                width: 15%;
+
+            }
+        }
+
+    }
+}
