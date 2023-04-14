@@ -9,29 +9,21 @@
     z-index: 1;
 }
 
-.loader-bar{
-    width: 60%;
-    max-width: 400px;
-    height: 40px;
-    background-color: rgb(226, 226, 226);
-    overflow: hidden;
-    border-radius: 10px;
-    z-index: 200;
-}
-
 .loader{
-    height: 100%;
-    width: 0%;
-    background-color: rgb(134, 134, 241);
-    animation: move-bar 2.5s cubic-bezier(.06, .78, .98, .14);
+    width: 12%;
+    aspect-ratio: 1;
+    border: 20px solid rgba(241, 239, 239, 0.767);
+    border-top: 20px solid rgb(10, 39, 66);
+    border-radius: 50%;
     transition: width .2s ease-out;
+    animation: spinner .5s linear infinite;
 }
 
-// @keyframes move-bar{
-//     from{
-//         width: 0%;
-//     }
-//     to{
-//         width: 100%;
-//     }
-// }
+@keyframes spinner{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

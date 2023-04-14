@@ -3,17 +3,16 @@
     flex-direction: column;
     padding: 0;
     height: 100%;
+    >*{
+        height: 50vh;
+    }
 
     .sub-header {
         color: $white;
     }
 
 }
-// @media screen and (max-width: 480px){
-//    header{
-//         height: 100vh;
-//     }
-// }
+
 
 .header-writeup {
     width: 100%;
@@ -58,7 +57,6 @@
 .icon-group {
     display: flex;
     justify-content: center;
-
     gap: 1.5rem;
 
     i {
@@ -82,11 +80,11 @@
         background-color: #4285F4;
     }
 }
-
-// .header-image {
-//     display: none;
-// }
-
+.header-image{
+    img{
+        height: 100% !important;
+    }
+}
 .button.explore {
     background-color: inherit;
     border: 1px solid $light-text;
@@ -104,7 +102,6 @@
 
 .button-group.smaller-screen{
     display: block;
-
     .button{
         width: 100%;
     }

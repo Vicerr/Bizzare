@@ -81,42 +81,16 @@ var swiper = new Swiper(".mySwiper", {
 
 
 let loaderContiainer = document.querySelector('.loader-container')
-let progressBarContainer = document.querySelector('.loader-bar')
 let progressBar = document.querySelector('.loader')
 let main = document.querySelector('main')
-// const stateCheck  = setInterval(()=>{
-
-
-
-
-// Update the width of the progress bar based on the page load time
-function updateLoader() {
-    // Get the current time
-    const currentTime = performance.now();
-    // const currentTime = new Date().getTime();
-
-    // Calculate the percentage of the website that has been loaded
-    const percentLoaded = ((currentTime - startTime) / startTime) * 100;
-
-
-    if (percentLoaded >= 100 && document.readyState == "complete") {
-        document.querySelector('.loader').style.width = `100%`
-        main.classList.remove('display-none-for-main')
-        main.style.opacity = '1'
-        loaderContiainer.classList.add('display-none-for-loader')
-
-    } else {
-        loaderContiainer.classList.remove('display-none-for-loader')
-
-        requestAnimationFrame(updateLoader);
-
-    }
-
+    
+window.onload = ()=>{if (document.readyState == "complete") {
+    main.classList.remove('display-none-for-main')
+    loaderContiainer.classList.add('display-none-for-loader')
+} else {
+    loaderContiainer.classList.remove('display-none-for-loader')
 }
-
-// Start updating the progress bar when the page starts loading
-requestAnimationFrame(updateLoader);
-
+}
 
 const navigationBtn = document.querySelector('.nav__toggle')
 const navMisc = document.querySelector('.brand-misc')

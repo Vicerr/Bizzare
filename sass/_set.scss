@@ -2,13 +2,12 @@
     font-family: 'Inter';
     color:hsla(0, 0%, 0%, 1);
     scroll-behavior: smooth;
-    font-size: 15px;
+    font-size: 16px;
+    --swiper-navigation-size: 2rem !important;
+    
 }
-
-@media screen and (min-width: 500px) {
-    :root{
-        font-size: 16px;
-    }
+a{
+    text-decoration: none !important;
 }
 
 // variables
