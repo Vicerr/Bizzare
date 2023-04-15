@@ -12,11 +12,11 @@
 .loader{
     width: 12%;
     aspect-ratio: 1;
-    border: 20px solid rgba(241, 239, 239, 0.767);
-    border-top: 20px solid rgb(10, 39, 66);
+    padding: 1rem;
+    border: 10px solid rgba(241, 239, 239, 0.767);
+    border-top: 10px solid rgb(10, 39, 66);
     border-radius: 50%;
-    transition: width .2s ease-out;
-    animation: spinner .5s linear infinite;
+    animation: spinner .5s ease-in-out infinite;
 }
 
 @keyframes spinner{

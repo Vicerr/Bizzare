@@ -18,13 +18,12 @@ footer{
         display: flex;
         flex-direction: column;
     }
-    // .footer-intro, .footer-other-container{
-    //     flex: 1;
-    // }
+  
 
     .footer-other-container{
         display: flex;
         width: 100%;
+        justify-content:space-evenly;
     }
     .logo-header{
         color: black;
@@ -66,7 +65,7 @@ footer{
     footer{
        .container{
         justify-content: flex-start;
-        gap: 0;
+        gap: 10rem;
        
         >*:not(.footer-intro){
             width: 100%;

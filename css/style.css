@@ -1,5 +1,5 @@
 :root {
-  font-family: "Inter";
+  font-family: "Nunito Sans", sans-serif;
   color: hsl(0deg, 0%, 0%);
   scroll-behavior: smooth;
   font-size: 16px;
@@ -26,6 +26,7 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
   position: relative;
+  min-height: 100vh;
   background-color: rgba(248, 248, 248, 0.493);
 }
 
@@ -134,12 +135,12 @@ h1 {
 .loader {
   width: 12%;
   aspect-ratio: 1;
-  border: 20px solid rgba(241, 239, 239, 0.767);
-  border-top: 20px solid rgb(10, 39, 66);
+  padding: 1rem;
+  border: 10px solid rgba(241, 239, 239, 0.767);
+  border-top: 10px solid rgb(10, 39, 66);
   border-radius: 50%;
-  transition: width 0.2s ease-out;
-  -webkit-animation: spinner 0.5s linear infinite;
-          animation: spinner 0.5s linear infinite;
+  -webkit-animation: spinner 0.5s ease-in-out infinite;
+          animation: spinner 0.5s ease-in-out infinite;
 }
 
 @-webkit-keyframes spinner {
@@ -171,7 +172,6 @@ h1 {
 .header-nav-section.sticky {
   position: fixed;
   width: 100%;
-  box-shadow: 0px 0px 10px 1px hsla(0deg, 0%, 73.3%, 0.5);
   z-index: 2;
   background-color: white;
 }
@@ -204,7 +204,9 @@ h1 {
   left: 0;
   z-index: 1;
   display: none;
-  background-color: white;
+  background-color: rgba(31, 31, 35, 0.842);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   color: black;
 }
 
@@ -218,13 +220,19 @@ h1 {
   flex: 1;
 }
 .nav__items .link {
-  color: black;
+  color: rgb(131, 129, 129);
   display: block;
   text-decoration: none;
   padding: 1em;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-align: center;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+.nav__items .link:hover {
+  transform: scale(1.035);
 }
 
 .nav__toggle {
@@ -240,18 +248,31 @@ h1 {
   justify-content: center;
   gap: 1rem;
   padding: 0.5rem 0;
-}
-.nav-buttons .button {
-  padding: 0.5rem 2rem;
   width: auto;
-  font-weight: 500;
-  color: white !important;
+}
+.nav-buttons a {
+  padding: 0.5rem 1rem;
+  width: auto;
+  border-radius: 10px;
+  color: white;
   margin: 0;
-  font-size: small;
+  font-size: 0.75rem;
+}
+.nav-buttons .explore {
+  color: white;
+  border: 1px solid hsl(0deg, 0%, 47%);
+}
+
+.sticky .brand-misc {
+  background-color: white;
+  border-top: 1px solid white;
+}
+.sticky .brand-misc .explore {
+  color: black !important;
 }
 
 .sticky .button, .sticky .link {
-  color: black !important;
+  color: rgb(102, 101, 101) !important;
 }
 
 @media screen and (min-width: 720px) {
@@ -263,9 +284,12 @@ h1 {
     width: -moz-fit-content;
     width: fit-content;
   }
+  .explore {
+    color: white !important;
+  }
   .brand-misc {
     position: relative;
-    display: flex;
+    display: flex !important;
     width: 70%;
     justify-content: space-between;
     background-color: inherit;
@@ -285,12 +309,12 @@ h1 {
   .nav__items .link, .nav-buttons .link {
     color: white;
   }
-  .nav-buttons .button {
+  .nav-buttons .button:not(.explore) {
     color: white !important;
   }
 }
 .brand-misc.display-for-navigation {
-  display: block !important;
+  display: block;
 }
 
 .header-container {
@@ -299,7 +323,7 @@ h1 {
   padding: 0;
   height: 100%;
 }
-.header-container > * {
+.header-container > .header-image {
   height: 50vh;
 }
 .header-container .sub-header {
@@ -369,9 +393,16 @@ h1 {
   gap: 1rem;
   width: 100%;
 }
-.button-group .button {
-  width: 180px;
-  margin: 0;
+.button-group > * {
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.button-group .explore {
+  border: 1px solid gray;
+}
+.button-group .yellow {
+  color: white;
 }
 
 .icon-group {
@@ -379,8 +410,8 @@ h1 {
   justify-content: center;
   gap: 1.5rem;
 }
-.icon-group i {
-  padding: 0.75rem;
+.icon-group i, .icon-group svg {
+  padding: 0.75rem !important;
   aspect-ratio: 1;
   color: white;
   border-radius: 50%;
@@ -421,15 +452,16 @@ h1 {
 .button-group.smaller-screen {
   display: block;
 }
-.button-group.smaller-screen .button {
-  width: 100%;
-}
 
 @media screen and (min-width: 720px) {
   .header-container {
+    height: 100vh;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+  .header-container > .header-image {
+    height: 100%;
   }
   .header-writeup {
     width: 60%;
@@ -444,7 +476,7 @@ h1 {
   }
   .header-image {
     width: 40%;
-    height: 100vh;
+    height: 100%;
     max-height: 800px;
     display: block;
   }
@@ -458,7 +490,7 @@ h1 {
   .button-group {
     display: flex;
   }
-  .button-group.smaller-screen {
+  .smaller-screen {
     display: none;
   }
 }
@@ -547,6 +579,7 @@ h1 {
   opacity: 1;
 }
 #services .boxes .three-column-layout > .box .auxbtn {
+  margin-left: 1.5rem;
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -555,6 +588,7 @@ h1 {
   width: fit-content;
   padding: 0.75rem 0;
   border: 0;
+  color: rgba(43, 43, 43, 0.863);
   font-size: 1rem;
   background-color: transparent;
   font-weight: 700;
@@ -756,6 +790,7 @@ footer .footer-intro, footer .footer-other {
 footer .footer-other-container {
   display: flex;
   width: 100%;
+  justify-content: space-evenly;
 }
 footer .logo-header {
   color: black;
@@ -791,7 +826,7 @@ footer [career] {
 @media screen and (min-width: 720px) {
   footer .container {
     justify-content: flex-start;
-    gap: 0;
+    gap: 10rem;
   }
   footer .container > *:not(.footer-intro) {
     width: 100%;
@@ -891,6 +926,10 @@ main {
   align-items: center;
   gap: 1rem;
   justify-content: flex-start;
+}
+
+header {
+  height: 100% !important;
 }
 
 img {

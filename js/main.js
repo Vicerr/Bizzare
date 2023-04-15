@@ -94,18 +94,24 @@ window.onload = ()=>{if (document.readyState == "complete") {
 
 const navigationBtn = document.querySelector('.nav__toggle')
 const navMisc = document.querySelector('.brand-misc')
-
+document.onsc
 let openNav = false
-navigationBtn.onclick = (e) => {
+navigationBtn.onclick = () => {
     if (openNav === false) {
         navMisc.classList.add('display-for-navigation')
         openNav = true
-        console.log(e.target)
+        document.onscroll = ()=>{
+            if (openNav === true) {
+                navMisc.classList.remove('display-for-navigation')
+                openNav = false
+            }
+        }
     } else {
         navMisc.classList.remove('display-for-navigation')
         openNav = false
     }
 }
+
 
 let headermain = document.querySelector('header')
 const navigationObserver = new IntersectionObserver(

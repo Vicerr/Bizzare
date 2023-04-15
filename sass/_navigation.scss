@@ -1,120 +1,15 @@
-// // nav{
-// //     background-color: white;
-// //     padding: 1rem;
-// // }
 
-// // @media screen and (min-width: 600px) {
-// //     nav{
-// //         display: absolute;
-// //         width: 100%;
-// //         background-color: red;
-// //     }
-// // }
-
-// // main container for the navigations
-// .header-nav-section {
-//     background-color: white;
-//     height: auto;
-//     width: 100%;
-//     z-index: 1;
-//     position: relative;
-//     border-bottom: .5px solid rgb(240, 240, 240);
-//     transition: all 0.3s ease-in-out;
-//     // inner container for the navigation container 
-//     .container {
-//         padding: 0 1rem;
-//         display: flex;
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         background-color: inherit;
-//     }
-// }
-// // add sticky navigation bar on scroll
-// .sticky {
-//     position: fixed;
-//     box-shadow: 0px 0px 15px 2px gray;
-//     border-bottom: 0 !important;
-// }
-
-// // brand logo styling 
-// // .brand__container {
-// //     height: 56px;
-// //     aspect-ratio: 16/9;
-// // }
-
-// // main navigations styling 
-// .nav__items {
-//     position: absolute;
-//     left: 0;
-//     top: -100%;
-//     transform: translateY(-100%);
-//     // display: none;
-//     opacity: 0;
-//     // transition: opacity 1s ease-in-out;
-//     width: 100%;
-//     background-color: inherit;
-//     z-index: 1;
-//     list-style: none;
-//     .link {
-//         display: block;
-//         padding: 1rem;
-//         text-align: center;
-//         border-bottom: .5px solid rgb(240, 240, 240);
-//     }
-// }
-
-// @media screen and (min-width: 600px) {
-//     .nav__items {
-//         position: relative;
-//         transform: translate(0);
-//         display: flex;
-//         background-color: inherit;
-//         width: auto;
-//         .link {
-//             padding: 1rem 1.5rem;
-//             border: 0 !important;
-//         }
-//     }
-// }
-
-// // open class to toggle open the navigation dropdown
-// .open {
-//     transform: translateY(0);
-//     transition: opacity 1s ease-in-out;
-
-//     top: 100%;
-//     opacity: 1;
-//     // display: block;
-// }
-
-// //buttons to open nav
-// .nav__toggle {
-//     position: relative;
-//     background-color: inherit;
-//     border: 0;
-//     padding: .75rem;
-//     .bar {
-//         font-size: 1.5em;
-//     }
-// }
-
-// // hide the button at specified width 
-// @media screen and (min-width: 600px) {
-//     .nav__toggle {
-//         display: none;
-//     }
-// }
 .flexnav{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .header-nav-section{
    &.sticky{
     position: fixed;
     width: 100%;
-    box-shadow: 0px 0px 10px 1px $shadow;
+    // box-shadow: 0px 0px 10px 1px $shadow;
     z-index: 2;
         background-color: white ;
 
@@ -146,13 +41,15 @@
 }
 .brand-misc{
     width: 100%;
+
     order: 3;
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 1;
     display: none;
-    background-color: white;
+    background-color: rgba(31, 31, 35, 0.842);
+    backdrop-filter: blur(4px);
     color: black;
 }
 .nav__toggle{
@@ -165,14 +62,19 @@
     // display: block;
 
 .link{
-    color: black;
+    color: rgb(131, 129, 129);
     display: block;
     text-decoration: none;
     padding:1em;
     width: 100%;
-    font-size: .90rem;
-
+    font-size: .95rem;
+    font-weight: 600;
     text-align: center;
+    transform: scale(1.0);
+    transition: transform .1s ease-in-out;
+    &:hover{
+        transform: scale(1.035);
+    }
 }
 }
 
@@ -190,17 +92,31 @@
     justify-content: center;
     gap: 1rem;
     padding: .5rem 0;
-    .button{
-        padding: .5rem 2rem;
+    width: auto;
+    a{
+        padding: .5rem 1rem;
         width: auto;
-        font-weight: 500;
-        color: white !important;
+        border-radius: 10px;
+        color: white;
         margin: 0;
-        font-size: small;
+        font-size: .75rem;
+    }
+    .explore{
+        color: white;
+    border: 1px solid $light-text;
+
+    }
+}
+.sticky .brand-misc{
+    background-color: white;
+    border-top: 1px solid white;
+
+    .explore{
+        color: black !important;
     }
 }
 .sticky .button, .sticky .link{
-    color: black !important;
+    color: rgb(102, 101, 101) !important;
 }
 @media screen and (min-width: 720px) {
     .brand-container{
@@ -209,10 +125,12 @@
     .nav__items{
         width: fit-content;
     }
-    
+    .explore{
+        color: white !important;
+    }
     .brand-misc{
         position: relative;
-        display: flex;
+        display: flex !important;
         width: 70%;
         justify-content: space-between;
         background-color: inherit;
@@ -221,7 +139,6 @@
     .nav__items, .nav-buttons{
         display: flex;
         flex-direction: row;
-        // flex: 1;
         width: auto;
     }  
     .nav__toggle{
@@ -238,18 +155,12 @@
     }
     .nav-buttons{
        
-        .button{
-           
+        .button:not(.explore){
             color: white !important;
-          
         }
-
     }
-   
 }
 
 .brand-misc.display-for-navigation{
-    display: block !important;
-    // box-shadow: 0px 0px 15px 1px $shadow;
-   
+    display: block ;
 }

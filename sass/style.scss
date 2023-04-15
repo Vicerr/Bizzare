@@ -37,13 +37,10 @@ main{
 
     }
 
-    // @if ($empty: 'empty'){
-    //     .box{
-    //         box-shadow: $box-shadow;
-    //     }
-    // }
 }
-
+header{
+    height: 100% !important;
+}
 img {
     width: 100%;
 }

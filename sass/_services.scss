@@ -53,13 +53,14 @@
                 }
 
                 .auxbtn {
+                    margin-left: 1.5rem;
                     display: flex;
                     gap: 1rem;
                     align-items: center;
                     width: fit-content;
                     padding: .75rem 0;
-                    // height: 36px;
                     border: 0;
+                    color: rgba(43, 43, 43, 0.863);
                     font-size: 1rem;
                     background-color: transparent;
                     font-weight: $fw-heavy;
@@ -71,18 +72,13 @@
 
         .two-column-layout {
             .image-container {
-                // height: 60vh;
-                
                 img {
                     aspect-ratio: 1;
-                    // height: 100%;
                 }
             }
-
             >div {
                 flex: 1;
             }
-
             .sa {
                 display: flex;
                 flex-direction: column;
