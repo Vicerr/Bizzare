@@ -456,6 +456,7 @@ h1 {
 @media screen and (min-width: 720px) {
   .header-container {
     height: 100vh;
+    max-height: 768px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
